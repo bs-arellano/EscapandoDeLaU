@@ -13,10 +13,6 @@ public class LibreriaMovil : MonoBehaviour, Interactive
         {
             return !moved;
         }
-        set
-        {
-            moved = !value;
-        }
     }
     void Start()
     {
