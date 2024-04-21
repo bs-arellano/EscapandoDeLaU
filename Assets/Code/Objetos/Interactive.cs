@@ -1,5 +1,5 @@
 public interface Interactive
 {
-    bool active {get;set;}
+    bool active {get;}
     void Interact();
 }

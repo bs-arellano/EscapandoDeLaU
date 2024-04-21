@@ -29,11 +29,17 @@ public class PlayerController : MonoBehaviour
     private int _numberOfJumps;
     [SerializeField] private int maxNumberOfJumps = 1;
     #endregion
+    #region Variables: Audio
+    public AudioSource _audioSource;
+    public AudioClip footstep;
+    #endregion
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
         _mainCamera = Camera.main;
         _mainCamera.fieldOfView = fov;
+        _audioSource = GetComponent<AudioSource>();
+        StartCoroutine(playFootsteps());
     }
     private void Update()
     {
@@ -88,6 +94,18 @@ public class PlayerController : MonoBehaviour
         yield return new WaitUntil(IsGrounded);
         _numberOfJumps = 0;
     }
+
+    IEnumerator playFootsteps()
+    {
+        _audioSource.clip = footstep;
+        while (true)
+        {
+            _audioSource.volume = (movement.currentSpeed - movement.speed + 1) / (movement.speed * movement.multiplier);
+            if (_input.magnitude > 0 && IsGrounded()) _audioSource.Play();
+            float stepDelay = movement.isSprinting ? 0.3f : 0.5f;
+            yield return new WaitForSeconds(stepDelay);
+        }
+    }
 }
 
 [Serializable]
@@ -98,5 +116,5 @@ public struct Movement
     public float acceleration;
 
     [HideInInspector] public bool isSprinting;
-    [HideInInspector] public float currentSpeed;
+    public float currentSpeed;
 }
