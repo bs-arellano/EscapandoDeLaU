@@ -22,7 +22,7 @@ public class Salida : MonoBehaviour, Interactive
         {
             playerInventory.UseItem("llave");
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camara>().ShowCursor();
-            SceneManager.LoadScene("MenuPrincipal");
+            SceneManager.LoadScene("Salones");
         }
         else
         {
