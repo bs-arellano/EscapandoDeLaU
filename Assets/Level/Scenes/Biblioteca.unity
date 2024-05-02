@@ -1654,6 +1654,10 @@ PrefabInstance:
       propertyPath: interactUI
       value: 
       objectReference: {fileID: 2050060693}
+    - target: {fileID: 1163633151329082141, guid: 5faa73d66dd8fff45b254d9f863d0ebb, type: 3}
+      propertyPath: playerInputSystem
+      value: 
+      objectReference: {fileID: 443926516}
     - target: {fileID: 1172881974861687874, guid: 5faa73d66dd8fff45b254d9f863d0ebb, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -2500,6 +2504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbfcdd2b8976b840b92045c5c0535fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInputSystem: {fileID: 0}
   interactUI: {fileID: 0}
 --- !u!1 &1680570358
 GameObject:
