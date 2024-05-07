@@ -21,6 +21,7 @@ public class Llave : MonoBehaviour, Interactive
     public void Interact()
     {
         playerInventory.AddItem(new Item("llave", 1));
+        available = false;
         Destroy(gameObject);
     }
 }
