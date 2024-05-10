@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Biblioteca.unity
     guid: f2789b7219cd6dd4089b33a1588541d8
+  - enabled: 1
+    path: Assets/Level/Scenes/Salones.unity
+    guid: f499098fe8e44bdf89912e82252c13bc
   m_configObjects: {}
