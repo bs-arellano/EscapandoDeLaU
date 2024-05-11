@@ -21,7 +21,12 @@ public class Buttons : MonoBehaviour
 
     public void Continue()
     {
-
+        string lastScene = PlayerPrefs.GetString("LastScene");
+        if (lastScene == "")
+        {
+            return;
+        }
+        SceneManager.LoadScene(lastScene);
     }
 
     public void Settings()
@@ -36,5 +41,15 @@ public class Buttons : MonoBehaviour
             settingsMenu.SetActive(true);
         }
         return;
+    }
+
+    public void Salir()
+    {
+        if(Application.isEditor)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+            return;
+        }
+        Application.Quit();
     }
 }
