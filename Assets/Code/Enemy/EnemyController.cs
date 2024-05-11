@@ -15,8 +15,10 @@ public class EnemyController : MonoBehaviour
     public bool persiguiendo;
     public AudioClip footstep;
     public AudioSource audioSource;
+    GameObject player;
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         enemyAnimator = GetComponentInChildren<Animator>();
         agent = GetComponent<NavMeshAgent>();
         enemyFOV = GetComponent<EnemyFieldOfView>();
@@ -30,6 +32,15 @@ public class EnemyController : MonoBehaviour
     }
     void Update()
     {
+        //Escucha al jugador correr
+        if (player.GetComponent<PlayerController>().isSprinting)
+        {
+            persiguiendo = true;
+            currentDestination = player.transform.position;
+            agent.SetDestination(currentDestination);
+            agent.speed = 3f;
+            enemyAnimator.Play("Running");
+        }
         //Ve al jugador y lo persigue
         if (enemyFOV.canSeePlayer)
         {
@@ -41,7 +52,7 @@ public class EnemyController : MonoBehaviour
         }
         distanceToDestination = Vector3.Distance(transform.position, currentDestination);
         //Esta persiguiendo al jugador y lo pierde de vista
-        if (persiguiendo && !enemyFOV.canSeePlayer && distanceToDestination < 2)
+        if (persiguiendo && !enemyFOV.canSeePlayer && !player.GetComponent<PlayerController>().isSprinting && distanceToDestination < 2)
         {
             persiguiendo = false;
             agent.speed = 2f;
@@ -66,9 +77,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    IEnumerator playFootsteps(){
+    IEnumerator playFootsteps()
+    {
         audioSource.clip = footstep;
-        while (true){
+        while (true)
+        {
             float stepDelay = persiguiendo ? 0.2f : 0.6f;
             audioSource.Play();
             yield return new WaitForSeconds(stepDelay);

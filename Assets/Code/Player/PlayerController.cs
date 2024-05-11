@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Movement movement;
     private Vector2 _input;
     private Vector3 _direction;
+    public bool isSprinting;
     #endregion
 
     #region Variables: Camera
@@ -40,9 +42,12 @@ public class PlayerController : MonoBehaviour
         _mainCamera.fieldOfView = fov;
         _audioSource = GetComponent<AudioSource>();
         StartCoroutine(playFootsteps());
+        string sceneName = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString("LastScene", sceneName);
     }
     private void Update()
     {
+        isSprinting = movement.isSprinting;
         ApplyGravity();
         ApplyMovement();
     }

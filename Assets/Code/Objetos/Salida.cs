@@ -4,6 +4,8 @@ public class Salida : MonoBehaviour, Interactive
 {
     public PlayerInventory playerInventory;
     bool available;
+    AudioSource audioSource;
+    public AudioClip doorLocked;
     bool Interactive.active
     {
         get
@@ -13,6 +15,7 @@ public class Salida : MonoBehaviour, Interactive
     }
     public void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
         available = true;
     }
@@ -26,6 +29,7 @@ public class Salida : MonoBehaviour, Interactive
         }
         else
         {
+            audioSource.PlayOneShot(doorLocked);
             Debug.Log("No tiene llave");
         }
     }
