@@ -16,6 +16,7 @@ public class Buttons : MonoBehaviour
     }
     public void NewGame()
     {
+        PlayerPrefs.SetInt("Time",0);
         SceneManager.LoadScene(newGameScene);
     }
 

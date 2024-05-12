@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public EnemyFieldOfView enemyFOV;
     public List<Vector3> destinations;
     public Vector3 currentDestination;
+    Vector3 lastPosition;
     public int currentDestinationIndex;
     public float distanceToDestination;
     public Animator enemyAnimator;
@@ -29,11 +30,12 @@ public class EnemyController : MonoBehaviour
         enemyAnimator.Play("Walking");
         persiguiendo = false;
         StartCoroutine(playFootsteps());
+        StartCoroutine(preventStuck());
     }
     void Update()
     {
         //Escucha al jugador correr
-        if (player.GetComponent<PlayerController>().isSprinting && Mathf.Abs(player.transform.position.y - transform.position.y) <= 1)
+        if (player.GetComponent<PlayerController>().isSprinting && Mathf.Abs(player.transform.position.y - transform.position.y) <= 2)
         {
             persiguiendo = true;
             currentDestination = player.transform.position;
@@ -43,7 +45,7 @@ public class EnemyController : MonoBehaviour
             enemyAnimator.Play("Running");
         }
         //Ve al jugador y lo persigue
-        if (enemyFOV.canSeePlayer)
+        else if (enemyFOV.canSeePlayer)
         {
             persiguiendo = true;
             currentDestination = enemyFOV.playerReference.transform.position;
@@ -87,5 +89,30 @@ public class EnemyController : MonoBehaviour
             audioSource.Play();
             yield return new WaitForSeconds(stepDelay);
         }
+    }
+
+    IEnumerator preventStuck()
+    {
+        while (true)
+        {
+            if (!persiguiendo)
+            {
+                yield return null;
+            }
+            else
+            {
+                lastPosition = transform.position;
+                yield return new WaitForSeconds(1);
+                if (Vector3.Distance(transform.position, lastPosition) < 0.1f)
+                {
+                    persiguiendo = false;
+                    agent.speed = 2f;
+                    currentDestination = destinations[currentDestinationIndex];
+                    agent.SetDestination(currentDestination);
+                    enemyAnimator.Play("Walking");
+                }
+            }
+        }
+
     }
 }

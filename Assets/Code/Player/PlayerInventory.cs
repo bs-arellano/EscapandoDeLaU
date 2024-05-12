@@ -18,8 +18,12 @@ public class PlayerInventory : MonoBehaviour
     }
     void Update()
     {
+        if (inventory.Count == 0)
+        {
+            itemSelected = 0;
+        }
         // Use the mouse wheel to change the selected item from 0 to inventory.Count - 1
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             itemSelected = (itemSelected + 1) % inventory.Count;
         }
