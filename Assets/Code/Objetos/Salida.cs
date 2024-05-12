@@ -24,6 +24,7 @@ public class Salida : MonoBehaviour, Interactive
         if (playerInventory.HasItem("llave"))
         {
             playerInventory.UseItem("llave");
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<TimeManager>().SaveTime();
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camara>().ShowCursor();
             SceneManager.LoadScene("Salones");
         }
