@@ -70,7 +70,15 @@ public class PlayerController : MonoBehaviour
         var targetSpeed = movement.isSprinting ? movement.speed * movement.multiplier : movement.speed;
         movement.currentSpeed = Mathf.MoveTowards(movement.currentSpeed, targetSpeed, movement.acceleration * Time.deltaTime);
         _mainCamera.fieldOfView = Mathf.MoveTowards(_mainCamera.fieldOfView, movement.isSprinting && movement.currentSpeed > 0 ? fov * 1.2f : fov, 1);
-        _direction = transform.forward * _input.y + _direction.y * transform.up + transform.right * _input.x;
+        //If the player is climbing, transforms only positive y input into vertical movement
+        if (movement.isClimbing && _input.y > 0)
+        {
+            _direction = transform.up * _input.y + transform.right * _input.x;;
+        }
+        else
+        {
+            _direction = transform.forward * _input.y + _direction.y * transform.up + transform.right * _input.x;
+        }
         _characterController.Move(_direction * movement.currentSpeed * Time.deltaTime);
     }
 
@@ -111,6 +119,27 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(stepDelay);
         }
     }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (other.CompareTag("Escalable"))
+        {
+            gravityMultiplier = 0;
+            movement.isClimbing = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Escalable"))
+        {
+            gravityMultiplier = 1;
+            movement.isClimbing = false;
+        }
+    }
 }
 
 [Serializable]
@@ -121,5 +150,6 @@ public struct Movement
     public float acceleration;
 
     [HideInInspector] public bool isSprinting;
+    [HideInInspector] public bool isClimbing;
     public float currentSpeed;
 }

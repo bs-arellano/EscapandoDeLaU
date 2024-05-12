@@ -6,6 +6,7 @@ TagManager:
   tags:
   - interactive
   - Enemy
+  - Escalable
   layers:
   - Default
   - TransparentFX
