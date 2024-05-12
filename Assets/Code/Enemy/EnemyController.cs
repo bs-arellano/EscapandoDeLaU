@@ -37,6 +37,7 @@ public class EnemyController : MonoBehaviour
         {
             persiguiendo = true;
             currentDestination = player.transform.position;
+            currentDestination.y = transform.position.y;
             agent.SetDestination(currentDestination);
             agent.speed = 3f;
             enemyAnimator.Play("Running");
