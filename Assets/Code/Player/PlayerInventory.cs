@@ -1,10 +1,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public List<Item> inventory = new();
+    public List<Item> inventory;
+    public Image displayedItemSprite;
+    public TextMeshProUGUI displayedItemName;
+    private int itemSelected = 0;
+    void Start()
+    {
+        inventory = new();
+        displayedItemName.gameObject.SetActive(false);
+        displayedItemSprite.gameObject.SetActive(false);
+    }
+    void Update()
+    {
+        // Use the mouse wheel to change the selected item from 0 to inventory.Count - 1
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            itemSelected = (itemSelected + 1) % inventory.Count;
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            itemSelected = (itemSelected - 1 + inventory.Count) % inventory.Count;
+        }
+        if (inventory.Count > 0)
+        {
+            displayedItemName.text = inventory[itemSelected].name;
+            displayedItemName.gameObject.SetActive(true);
+            displayedItemSprite.sprite = inventory[itemSelected].image;
+            displayedItemSprite.gameObject.SetActive(true);
+        }
+        else
+        {
+            displayedItemName.text = "";
+            displayedItemName.gameObject.SetActive(false);
+            displayedItemSprite.sprite = null;
+            displayedItemSprite.gameObject.SetActive(false);
+        }
+    }
     public void AddItem(Item item)
     {
         if (HasItem(item.name))

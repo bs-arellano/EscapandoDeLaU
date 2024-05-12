@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Llave : MonoBehaviour, Interactive
 {
     public PlayerInventory playerInventory;
+    public Sprite inventorySprite;
     bool available;
     bool Interactive.active
     {
@@ -20,7 +19,7 @@ public class Llave : MonoBehaviour, Interactive
     }
     public void Interact()
     {
-        playerInventory.AddItem(new Item("llave", 1));
+        playerInventory.AddItem(new Item("llave", 1, inventorySprite));
         available = false;
         Destroy(gameObject);
     }

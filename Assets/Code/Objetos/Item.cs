@@ -1,12 +1,14 @@
-using System;
+using UnityEngine;
 
 public class Item
 {
-    public String name;
+    public string name;
     public int quantity;
-    public Item(string name, int quantity)
+    public Sprite image;
+    public Item(string name, int quantity, Sprite image)
     {
         this.name = name;
         this.quantity = quantity;
+        this.image = image;
     }
 }

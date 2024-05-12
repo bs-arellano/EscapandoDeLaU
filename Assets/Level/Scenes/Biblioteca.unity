@@ -1412,6 +1412,11 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 5702903852764263215, guid: 5faa73d66dd8fff45b254d9f863d0ebb, type: 3}
   m_PrefabInstance: {fileID: 939521355}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &767348193 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9096757672433282008, guid: 5faa73d66dd8fff45b254d9f863d0ebb, type: 3}
+  m_PrefabInstance: {fileID: 939521355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &822502735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,6 +1524,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensityivity: 1
   playerCharacterController: {fileID: 0}
+--- !u!1 &870487175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 870487176}
+  - component: {fileID: 870487178}
+  - component: {fileID: 870487177}
+  m_Layer: 7
+  m_Name: InventorySlot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &870487176
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870487175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 767348193}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 790, y: -418}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &870487177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870487175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 548ee023843cfaf439c16ac9cc1eafdb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &870487178
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870487175}
+  m_CullTransparentMesh: 1
 --- !u!1001 &939521355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1575,9 +1655,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5409401658079852835, guid: 5faa73d66dd8fff45b254d9f863d0ebb, type: 3}
+      propertyPath: m_Name
+      value: Crosshair
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 9096757672433282008, guid: 5faa73d66dd8fff45b254d9f863d0ebb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 870487176}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5faa73d66dd8fff45b254d9f863d0ebb, type: 3}
 --- !u!1 &977149038 stripped

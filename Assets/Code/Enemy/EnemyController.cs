@@ -33,7 +33,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         //Escucha al jugador correr
-        if (player.GetComponent<PlayerController>().isSprinting)
+        if (player.GetComponent<PlayerController>().isSprinting && Mathf.Abs(player.transform.position.y - transform.position.y) <= 1)
         {
             persiguiendo = true;
             currentDestination = player.transform.position;
