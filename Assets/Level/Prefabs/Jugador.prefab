@@ -457,6 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayedItemSprite: {fileID: 6764104047990492063}
   displayedItemName: {fileID: 3052452454680589775}
+  pickupSound: {fileID: 8300000, guid: 968ee8b371247bd4984f5c7ff144fbaf, type: 3}
 --- !u!114 &7494422638077052999
 MonoBehaviour:
   m_ObjectHideFlags: 0

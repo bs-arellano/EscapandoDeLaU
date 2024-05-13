@@ -10,9 +10,12 @@ public class PlayerInventory : MonoBehaviour
     public Image displayedItemSprite;
     public TextMeshProUGUI displayedItemName;
     private int itemSelected = 0;
+    AudioSource audioSource;
+    public AudioClip pickupSound;
     void Start()
     {
         inventory = new();
+        audioSource = GetComponent<AudioSource>();
         displayedItemName.gameObject.SetActive(false);
         displayedItemSprite.gameObject.SetActive(false);
     }
@@ -57,6 +60,7 @@ public class PlayerInventory : MonoBehaviour
         {
             inventory.Add(item);
         }
+        audioSource.PlayOneShot(pickupSound);
     }
     public bool HasItem(string name)
     {
