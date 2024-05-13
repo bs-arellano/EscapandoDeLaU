@@ -1876,8 +1876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4074c8855236373438fc5ef65778aca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventory: {fileID: 0}
   inventorySprite: {fileID: 21300000, guid: 770c994c7ced54b4b9ecbd05ccb9d9a3, type: 3}
+  keyName: biblioteca
 --- !u!1001 &1522913558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2757,6 +2757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 0}
+  keyName: Llave biblioteca
   doorLocked: {fileID: 8300000, guid: 6f99ed0f9fa94b5458cec6ac8f495222, type: 3}
   doorOpen: {fileID: 8300000, guid: aa2edc177b08ff343a98bf38a371b96f, type: 3}
 --- !u!65 &2131330511

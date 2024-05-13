@@ -1,10 +1,12 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Llave : MonoBehaviour, Interactive
+public class PuertaBanos : MonoBehaviour, Interactive
 {
     PlayerInventory playerInventory;
-    public Sprite inventorySprite;
     public string keyName;
+    public float rotation;
     bool available;
     bool Interactive.active
     {
@@ -20,8 +22,11 @@ public class Llave : MonoBehaviour, Interactive
     }
     public void Interact()
     {
-        playerInventory.AddItem(new Item("Llave " + keyName , 1, inventorySprite));
-        available = false;
-        Destroy(gameObject);
+        if (playerInventory.HasItem(keyName))
+        {
+            playerInventory.UseItem(keyName);
+            transform.Rotate(0,0,rotation);
+        }
     }
 }
+

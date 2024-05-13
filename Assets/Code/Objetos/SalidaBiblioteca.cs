@@ -1,9 +1,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Salida : MonoBehaviour, Interactive
+public class SalidaBiblioteca : MonoBehaviour, Interactive
 {
-    public PlayerInventory playerInventory;
+    PlayerInventory playerInventory;
+    public string keyName;
     bool available;
     AudioSource audioSource;
     public AudioClip doorLocked;
@@ -23,9 +24,9 @@ public class Salida : MonoBehaviour, Interactive
     }
     public void Interact()
     {
-        if (playerInventory.HasItem("llave"))
+        if (playerInventory.HasItem(keyName))
         {
-            playerInventory.UseItem("llave");
+            playerInventory.UseItem(keyName);
             audioSource.PlayOneShot(doorOpen);
             StartCoroutine(Wait(0.7f, () =>
             {
