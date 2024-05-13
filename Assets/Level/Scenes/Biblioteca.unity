@@ -2758,6 +2758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 0}
   doorLocked: {fileID: 8300000, guid: 6f99ed0f9fa94b5458cec6ac8f495222, type: 3}
+  doorOpen: {fileID: 8300000, guid: aa2edc177b08ff343a98bf38a371b96f, type: 3}
 --- !u!65 &2131330511
 BoxCollider:
   m_ObjectHideFlags: 0
