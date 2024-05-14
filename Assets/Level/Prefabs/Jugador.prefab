@@ -457,6 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayedItemSprite: {fileID: 6764104047990492063}
   displayedItemName: {fileID: 3052452454680589775}
+  pickupSound: {fileID: 8300000, guid: 968ee8b371247bd4984f5c7ff144fbaf, type: 3}
 --- !u!114 &7494422638077052999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,7 +897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0.019607844}
+  m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0.019607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
