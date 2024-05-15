@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
             movement.isClimbing = true;
         }
         if (other.CompareTag("Trampoline")){
-            jumpPower = 4;
+            jumpPower = other.GetComponent<Trampolin>().jumpPower;
         }
     }
     void OnTriggerExit(Collider other)
