@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -147.55, y: 8.89, z: 551.4}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3105973494881871465}
@@ -121,6 +121,8 @@ GameObject:
   - component: {fileID: 4787829648755186576}
   - component: {fileID: 3266537178903030956}
   - component: {fileID: 3548975521490795856}
+  - component: {fileID: 3792196402134469687}
+  - component: {fileID: 507336158594161559}
   m_Layer: 0
   m_Name: bars.003
   m_TagString: Untagged
@@ -171,7 +173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4362962105363994262, guid: d924b0b81b700522ea3fc68e9ae09d30, type: 3}
+  - {fileID: 2100000, guid: 10daa292a3d02f1259284ab6f9d9ee7a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -208,9 +210,43 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026, y: 0.006413801, z: 0.030000001}
+  m_Center: {x: -0.00000047683716, y: 0.0026355025, z: 0.0050000013}
+--- !u!114 &3792196402134469687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3580899453697489076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6411639811f46778db7579b57ae8f50c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyName: Llave amarilla
+--- !u!65 &507336158594161559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3580899453697489076}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.026, y: 0.0011427972, z: 0.030000001}
-  m_Center: {x: -0.00000047683716, y: 0, z: 0.0050000013}
+  m_Size: {x: 0.026, y: 0.0011427974, z: 0.030000009}
+  m_Center: {x: -0.0000001527369, y: 0.00000047683716, z: 0.00500001}
