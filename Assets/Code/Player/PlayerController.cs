@@ -131,6 +131,9 @@ public class PlayerController : MonoBehaviour
             gravityMultiplier = 0;
             movement.isClimbing = true;
         }
+        if (other.CompareTag("Trampoline")){
+            jumpPower = 4;
+        }
     }
     void OnTriggerExit(Collider other)
     {
@@ -138,6 +141,9 @@ public class PlayerController : MonoBehaviour
         {
             gravityMultiplier = 1;
             movement.isClimbing = false;
+        }
+        if (other.CompareTag("Trampoline")){
+            jumpPower = 2;
         }
     }
 }
