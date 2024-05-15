@@ -5353,7 +5353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KeycodeUI: {fileID: 903189919}
   salida: {fileID: 608416478}
-  code: 1234
+  code: 8743
 --- !u!65 &1508534022
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5918,7 +5918,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50f9c2b9b9c4c07a48622ac0c2d20602, type: 2}
+  - {fileID: 2100000, guid: df01bc55fca2d2349a542e5423ab7e8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
