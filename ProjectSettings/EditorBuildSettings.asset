@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Salones.unity
     guid: f499098fe8e44bdf89912e82252c13bc
+  - enabled: 1
+    path: Assets/Level/Scenes/campus1.unity
+    guid: d6690ba3dc88ab596afc7b14eee74336
   m_configObjects: {}

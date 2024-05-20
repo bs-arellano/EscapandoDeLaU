@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource _audioSource;
     public AudioClip footstep;
     #endregion
+    public bool visible;
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(playFootsteps());
         string sceneName = SceneManager.GetActiveScene().name;
         PlayerPrefs.SetString("LastScene", sceneName);
+        visible = true;
     }
     private void Update()
     {
@@ -145,6 +147,14 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Trampoline")){
             jumpPower = 2;
         }
+    }
+    public bool IsVisible()
+    {
+        return visible;
+    }
+    public void SetVisible(bool isVisible)
+    {
+        visible = isVisible;
     }
 }
 

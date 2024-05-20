@@ -10,11 +10,13 @@ public class EnemyFieldOfView : MonoBehaviour
     public GameObject playerReference;
     public LayerMask targetMask;
     public LayerMask obstructionMask;
+    PlayerController playerController;
     public bool canSeePlayer;
     // Start is called before the first frame update
     void Start()
     {
         playerReference = GameObject.FindGameObjectWithTag("Player");
+        playerController = playerReference.GetComponent<PlayerController>();
         StartCoroutine(FOVRoutine());
     }
 
@@ -40,7 +42,7 @@ public class EnemyFieldOfView : MonoBehaviour
             {
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask) && playerController.IsVisible())
                     canSeePlayer = true;
                 else
                     canSeePlayer = false;

@@ -29,4 +29,18 @@ public class TimeManager : MonoBehaviour
             timeText.text = (time / 300).ToString("00") + ":" + (time % 300 / 5).ToString("00") + " am";
         }
     }
+    public void ReduceTime(int amount)
+    {
+        time -= amount;
+        if (time < 0)
+        {
+            time = 0;
+        }
+        timeText.text = (time / 300).ToString("00") + ":" + (time % 300 / 5).ToString("00") + " am";
+        SaveTime();
+    }
+    public int GetTime()
+    {
+        return time;
+    }
 }

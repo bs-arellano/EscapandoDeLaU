@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 5603900002115391652}
   - component: {fileID: 1571688254218482515}
   - component: {fileID: 7494422638077052999}
+  - component: {fileID: 3536224933092759475}
   m_Layer: 7
   m_Name: Jugador
   m_TagString: Player
@@ -333,6 +334,7 @@ MonoBehaviour:
   maxNumberOfJumps: 1
   _audioSource: {fileID: 0}
   footstep: {fileID: 8300000, guid: 65eb45c6fcb3fdd4b817ab26eb49761c, type: 3}
+  visible: 0
 --- !u!114 &1163633151329082141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +473,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 8028066967599104215}
+--- !u!114 &3536224933092759475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922006135127247895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab1984eaa51bc747a6b5e6c91f40fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3136414590551123777
 GameObject:
   m_ObjectHideFlags: 0
