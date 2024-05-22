@@ -8549,6 +8549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 520563307}
   - component: {fileID: 520563306}
+  - component: {fileID: 520563308}
   m_Layer: 0
   m_Name: salida
   m_TagString: Untagged
@@ -8592,6 +8593,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &520563308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520563305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25ce4646e880d08c83be7b3afc2495f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &521922097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2406103965249060757, guid: 308a36a65b0e1ccd791a7a9c7fe3b07e, type: 3}
@@ -18437,7 +18450,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987052318}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/campus1.unity
     guid: d6690ba3dc88ab596afc7b14eee74336
+  - enabled: 1
+    path: Assets/Level/Scenes/Creditos.unity
+    guid: fb80d601340d89c5283858a0cf88b839
   m_configObjects: {}
