@@ -1,11 +1,13 @@
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
     private int time;
     public TextMeshProUGUI timeText;
+    public AudioClip gameOverSound;
     public void Start()
     {
         //Seconds up to 1800 (half hour)
@@ -27,7 +29,11 @@ public class TimeManager : MonoBehaviour
             time++;
             //Convert time to HH:MM (5 seconds one minute)
             timeText.text = (time / 300).ToString("00") + ":" + (time % 300 / 5).ToString("00") + " am";
+            if (time == 1794){
+                GetComponent<AudioSource>().PlayOneShot(gameOverSound);
+            }
         }
+        GameOver();
     }
     public void ReduceTime(int amount)
     {
@@ -42,5 +48,9 @@ public class TimeManager : MonoBehaviour
     public int GetTime()
     {
         return time;
+    }
+    private void GameOver()
+    {
+        SceneManager.LoadScene("Creditos");
     }
 }
