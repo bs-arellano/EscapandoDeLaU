@@ -46,11 +46,11 @@ public class Buttons : MonoBehaviour
 
     public void Salir()
     {
-        if(Application.isEditor)
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
-            return;
-        }
+        // if(Application.isEditor)
+        // {
+        //     UnityEditor.EditorApplication.isPlaying = false;
+        //     return;
+        // }
         Application.Quit();
     }
 }
