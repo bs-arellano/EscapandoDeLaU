@@ -9,7 +9,7 @@ public class SalidaSalones : MonoBehaviour
         {
             other.GetComponent<TimeManager>().SaveTime();
             other.GetComponentInChildren<Camara>().ShowCursor();
-            SceneManager.LoadScene("campus1");
+            SceneManager.LoadScene("campus1 cinematica");
         }
     }
 }
